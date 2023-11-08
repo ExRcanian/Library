@@ -2,12 +2,16 @@
 const myLibrary = []
 
 //Constructor for books
-function Book(title, author, pages, read) {
-    this.title = title;
-    this.author = author;
-    this.pages = pages;
-    this.read = read;
+
+class Book {
+    constructor({title, author, pages, read}) {
+        this.title = title;
+        this.author = author;
+        this.pages = pages;
+        this.read = read;
+    }
 }
+
 
 
 function addBookToLibrary() {
@@ -18,7 +22,7 @@ function addBookToLibrary() {
     let read = document.querySelector('#read').value;
 
     //Passes variables to Book constructor to create 'nextbook'.
-    let nextBook = new Book(title, author, pages, read);
+    let nextBook = new Book({title, author, pages, read});
 
     //Pushes new 'nextBook' into library array
     myLibrary.push(nextBook)
